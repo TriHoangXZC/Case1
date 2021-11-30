@@ -88,6 +88,7 @@ function nextLevel() {
     document.getElementById("score").innerHTML = "Score: " + score;
     document.getElementById("level").innerHTML = "Level: " + level;
     document.getElementById("correct").currentTime = 0;
+    document.getElementById("wrong").pause();
     document.getElementById("correct").play();
     generateCalculation();
 }
@@ -95,7 +96,9 @@ function nextLevel() {
 function gameOver() {
     document.getElementById("true").style.display = "none";
     document.getElementById("false").style.display = "none";
+    document.getElementById("correct").pause();
     document.getElementById("wrong").play();
+
     alert("Game Over. Your score is " + score + ". Replay?");
     location.reload();
 }
